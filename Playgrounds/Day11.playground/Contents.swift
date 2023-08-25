@@ -54,3 +54,24 @@ struct Employee {
 }
 
 Employee.example
+
+// checkpoint 6
+
+struct Car {
+    let model: String
+    let seats: Int
+    private(set) var gear = 0
+    
+    mutating func switchGears(shift: Int) {
+        if gear + shift <= 6 || gear - shift >= 0{
+            gear += shift
+        }
+    }
+    
+}
+
+var audi = Car(model: "Audi", seats: 5)
+audi.switchGears(shift: 2)
+audi.switchGears(shift: -1)
+print(audi)
+
